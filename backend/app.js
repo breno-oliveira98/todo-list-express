@@ -33,6 +33,24 @@ app.post('/tarefas', (req, res) => {
     }
 });
 
+app.put('/tarefas/:id', (req, res) => {
+    const {id} = req.params;
+    const {task} = req.body;
+
+    if(!task) {
+        return res.status(404).json({error: 'O campo da tarefa é obrigatório'})
+    }
+
+    const tarefa = tarefas.find(t => t.id === parseInt(id))
+
+    if (tarefa) {
+        tarefa.task = task
+        res.status(200).json({ message: 'Tarefa atualizada com sucesso', tarefa });
+    } else {
+        res.status(404).json({ error: 'Tarefa não encontrada' });
+    }
+})
+
 app.delete('/tarefas/:id', (req, res) => {
     const { id } = req.params; // Obtém o ID da tarefa a ser deletada
     const index = tarefas.findIndex(t => t.id === parseInt(id));

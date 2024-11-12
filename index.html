@@ -28,7 +28,7 @@
 
     <main class="mt-2">
         <div>
-            <div  class="w-[80%] ml-[15%]">
+            <div class="w-[80%] ml-[15%]">
                 <ul id="list">
 
                 </ul>
@@ -36,7 +36,9 @@
 
             <!-- Button to Open Modal -->
             <div class="fixed bottom-5 right-[20%]">
-                <button id="openModal" class="bg-[var(--primary)] text-white rounded-full w-12 h-12 hover:bg-[var(--primary-hover)]" onclick="openModal()"><i class="bi bi-plus-lg text-[24px]"></i></button>
+                <button id="openModal"
+                    class="bg-[var(--primary)] text-white rounded-full w-12 h-12 hover:bg-[var(--primary-hover)]"
+                    onclick="openModal()"><i class="bi bi-plus-lg text-[24px]"></i></button>
             </div>
             <!-- Modal Background Overlay -->
             <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
@@ -52,16 +54,24 @@
                         <!-- Buttons -->
                         <div class="flex justify-between space-x-2">
                             <!-- Cancel Button -->
-                            <button class="px-4 py-2 bg-[var(--background)] border border-[var(--primary)] text-[var(--primary)] rounded hover:bg-gray-100" onclick="closeModal()">Cancelar</button>
+                            <button
+                                class="px-4 py-2 bg-[var(--background)] border border-[var(--primary)] text-[var(--primary)] rounded hover:bg-gray-100"
+                                onclick="closeModal()">Cancelar</button>
                             <!-- Add Button -->
-                            <button class="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)]" onclick="addItem()">Adicionar</button>
+                            <button
+                                id="btnSalvar"
+                                class="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)]"
+                                >Adicionar</button>
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
+
+
+            
 
     </main>
-    
+
     <script src="script.js"></script>
 </body>
 
